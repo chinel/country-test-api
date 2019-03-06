@@ -1,0 +1,274 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "COUNTRY TEST API",
+        "contact": {
+            "name": "Chinelo Kwazu",
+            "url": "nelokwaz@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:9099",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/activities": {
+            "get": {
+                "tags": [
+                    "activities"
+                ],
+                "summary": "History of all activities on the site",
+                "operationId": "getCustomerRates",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "register"
+                ],
+                "summary": "Registers a new user",
+                "operationId": "setupRegistration",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "in": "path",
+                        "description": "Firstname of the user.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "path",
+                        "description": "Lastname of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "Email of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "Username of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "date_of_birth",
+                        "in": "path",
+                        "description": "Date of the birth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "description": "password of the user",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "logs in a new user and returns a token",
+                "operationId": "setupLogin",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "Email of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "description": "password of the user",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/countries": {
+            "post": {
+                "tags": [
+                    "create counry"
+                ],
+                "summary": "creates a new country",
+                "operationId": "setupCountry",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "name of country",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "continent",
+                        "in": "path",
+                        "description": "continent of country",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "description": "token generated after login",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/country/{id}": {
+            "put": {
+                "tags": [
+                    "updates counry"
+                ],
+                "summary": "updates country",
+                "operationId": "setupCountry",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "name of country",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "continent",
+                        "in": "path",
+                        "description": "continent of country",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of country to be passed via query string",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "description": "token generated after login",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Deletes a  counry"
+                ],
+                "summary": "deletes country",
+                "operationId": "setupCountry",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "description": "token generated after login",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
